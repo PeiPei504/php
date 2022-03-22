@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<TITLE>新增資料</TITLE>
+<script type="text/javascript">
+function checksNo(field,alerttxt) {
+	if (field.value==null||field.value=="") {
+		alert(alerttxt);
+		return false
+	} else {
+		return true
+	}
+}
+function checkcNo(field,alerttxt) {
+	if (field.value==null||field.value=="") {
+		alert(alerttxt);
+		return false
+	} else {
+		return true
+	}
+}
+function checksemester(field,alerttxt) {
+	if (field.value==null||field.value=="") {
+		alert(alerttxt);
+		return false
+	} else {
+		return true
+	}
+}
+function checkscore(field,alerttxt) {
+	if (field.value==null||field.value=="") {
+		alert(alerttxt);
+		return false
+	} else {
+		return true
+	}
+}
+
+function validateForm(thisform) {
+	if (checksNo(thisform.sNo,"★ 您是否忘了填寫帳號？")==false) {
+			thisform.sNo.focus();
+			return false
+	}if(checkcNo(thisform.cNo,"★ 您是否忘了填寫遊戲編號？")==false) {
+			thisform.cNo.focus();
+			return false
+	}if(checksemester(thisform.semester,"★ 您是否忘了填寫歲數？")==false) {
+			thisform.semester.focus();
+			return false
+	}if(checkscore(thisform.semester,"★ 您是否忘了填寫價錢？")==false) {
+			thisform.semester.focus();
+			return false
+	}
+}
+
+</script>
+
+<style type="text/css">
+<!--
+.style1 {	font-size: 28px;
+	color: #FF0000;
+	font-family: "標楷體";
+	font-weight: bold;
+}
+.style2 {font-family: Arial, Helvetica, sans-serif}
+.style3 {color: #FFFFFF; font-family: "新細明體"; }
+body {
+	background-image: url(images/ball66.jpg);
+	margin-left: 70px;
+}
+-->
+</style>
+</HEAD>
+
+<BODY>
+<p class="style1">遊戲購買-新增</p>
+<form name="form1" method="post" action="Insert.php" onsubmit="return validateForm(this)">
+請輸入欲新增的資料
+  <p>
+  <img src="images/ball1.gif" width="14" height="14">帳號：
+  <input name="sNo" type="text" id="sNo" size="16" maxlength="10">
+  <br><br>
+  <img src="images/ball1.gif" width="14" height="14">遊戲編號：
+  <input name="cNo" type="text" id="cNo" size="16" maxlength="4">
+  <br><br>
+  <img src="images/ball1.gif" width="14" height="14">歲數：
+  <input name="semester" type="text" id="semester" size="16" maxlength="5">
+  <br><br>
+  <img src="images/ball1.gif" width="14" height="14">價錢：
+  <input name="score" type="text" id="score" size="16" maxlength="3" onkeyup="value=value.replace(/[^\0-9\.]/g,'')" onpaste="value=value.replace(/[^\0-9\.]/g,'')" oncontextmenu="value=value.replace(/[^\0-9\.]/g,'')">
+  <br><br>
+  </p>
+  <input type="submit" name="Submit2" value="送出資料">
+  <input type="reset" name="Submit" value="重填資料">
+</p>
+</form>
+</BODY>
+</HTML>
